@@ -1,0 +1,67 @@
+﻿@model Entidades.Producto
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<br/>
+<h2>Detalles del producto</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)<br/>
+            <img style="width: 300px" src="~/imgs/@Html.DisplayFor(model => model.Foto)" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descuento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-secondary" })
+</p>

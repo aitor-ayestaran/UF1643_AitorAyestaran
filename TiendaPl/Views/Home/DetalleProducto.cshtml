@@ -1,0 +1,68 @@
+﻿@model Entidades.Producto
+
+@{
+    ViewBag.Title = "DetalleProducto";
+}
+<br />
+@Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-secondary" })
+<h2>Detalle del producto</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            <img style="width: 300px" src="~/imgs/@Html.DisplayFor(model => model.Foto)" />
+        </dd>
+
+        <dt>
+            Precio por @Html.DisplayFor(model => model.Unidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnidad)
+
+        </dd>
+
+        @if (Model.Descuento != 0)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Descuento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descuento) %
+            </dd>
+
+            <dt>
+                Precio con descuento:
+            </dt>
+
+            <dd>
+                @Bll.PublicoBll.PrecioConDescuento(Model).ToString("c")
+            </dd>
+        }
+    </dl>
+</div>
+
+
+
